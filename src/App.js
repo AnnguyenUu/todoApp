@@ -93,6 +93,7 @@ class App extends React.Component {
 							value = {name}
 							onChange = {this.onHandleChange}	
 							onKeyUp = {this.onKeyUp} 
+							placeholder="Enter your task..."
 							/>
 						</div>
 					</Col>
