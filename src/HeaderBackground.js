@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap'
 import './App.css';
-import Timer from './Timer.js'
 import tomato from './img/tomato-cartoon-1.svg';
 import tomatoAha from './img/tomato-cartoon.svg';
 import logo from './img/logo.svg';
@@ -46,7 +45,7 @@ class HeaderBackGround extends React.Component {
 				<Col className = 'text-center'
 					lg = {12}
 				>
-					<Timer />
+				
 				</Col>	
 			</Row>
 		</Container>
