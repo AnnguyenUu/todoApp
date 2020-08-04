@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import check from './img/tomato.svg';
 import checkDone from './img/tomato-done.svg';
+import pen from './img/pen.png';
 import Toggle from 'react-toggle';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,7 +10,7 @@ class Podomora extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			goEasyToday: true,
+			goEasyToday: false,
 			newArr: {},
 			newArr2: []
 		}
@@ -51,16 +52,16 @@ class Podomora extends React.Component {
 
 	render() {
 		const { item, onClick } = this.props
-		const { toDoIst, newArr } = this.state
-		let url = check
+		const { goEasyToday } = this.state
+		let url = pen
 		let className = "Podomora"
-		if (item.isComplete) {
-			url = checkDone
+		if (item.isComplete || goEasyToday) {
+			url = pen
 		}
 
 		return (
 			<div className={classNames('Podomora', {
-				'Podomora-complete': item.isComplete
+				'Podomora-complete': item.isComplete || goEasyToday
 			}
 			)}
 			>

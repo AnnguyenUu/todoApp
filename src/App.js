@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import Podomora from './Podomora.js'
-import Timer from './Timer.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Modal } from 'react-bootstrap';
-import HeaderBackGround from './HeaderBackground.js';
 import yourlist from './img/todo-label.svg';
+import coffe from './img/todoist.png'
 
 class App extends React.Component {
 	constructor(props) {
@@ -53,7 +52,7 @@ class App extends React.Component {
 		this.setState({
 			Tomatoes: [
 			...this.state.Tomatoes,
-			{title: text, isComplete: false}
+			{title: text.toUpperCase(), isComplete: false}
 			],
 			name: ''
 		})
@@ -70,18 +69,25 @@ class App extends React.Component {
 	render() {
 		const { Tomatoes, name, startCount } = this.state;
 		let url = yourlist
+		let coffeImg = coffe
 		return (
 
     	<div className = "tomatoes">	
     		<Modal
     		show = {this.state.popUp}
     		 />
-			<HeaderBackGround />
-			<Container className = 'wrap' fluid = {true}>
+			<Container>
+				<Row>
+					<Col md={{ span: 4, offset: 4 }}>
+						<img style={{width: "100%"}} src={coffeImg} />
+					</Col>
+				</Row>
+			</Container>
+			<Container>
 				<Row>
 					<Col md ={6} lg = {6}>
 						<div className = 'write-it-down'>
-							<h2>New ToDos is</h2>
+							<h2>Add Task</h2>
 							<input 
 							type = 'text' 
 							value = {name}
@@ -92,7 +98,7 @@ class App extends React.Component {
 					</Col>
 					<Col md ={6} lg ={6}>
 						<div className = 'list-render'>
-							<img src = {url} />
+							<h2 style={{textAlign: 'center'}}> Tasks </h2>
 							<div className = 'list-to-do'>
 								{
 									Tomatoes.map(( item, index ) => <Podomora

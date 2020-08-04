@@ -130,7 +130,8 @@ input {
  }
 
 .header-background {
-  background-color: #C55E5E;
+  background-color: rgb(240, 91, 86);
+  padding-bottom: 74px
 }
 .react-toggle.to-do {
   margin-top: auto;
